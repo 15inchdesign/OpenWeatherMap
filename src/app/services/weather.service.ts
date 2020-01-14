@@ -18,7 +18,7 @@ export class WeatherService {
   constructor(private http: HttpClient ) { }  
 
 
-// Let's call a parametar for current weather with GET method
+// Let's call a parametar for current weather with GET method lalalalalalaa
   getCurrentWeather(loc: string) {
       return this.http.get(`${environment.apiUrl}/weather?q=${loc}&appid=${apiKey}`)
   }
