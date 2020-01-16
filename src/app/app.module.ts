@@ -3,8 +3,11 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 // Material Modules
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {  MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatToolbarModule, 
+         MatExpansionModule, 
+         MatDividerModule, 
+         MatListModule } from '@angular/material';
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +39,9 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     HttpClientModule,
      // Material modules
      MatToolbarModule,
+     MatExpansionModule,
+     MatListModule,
+     MatDividerModule,
     StoreModule.forRoot({ loc: locationReducer })
   
   ],

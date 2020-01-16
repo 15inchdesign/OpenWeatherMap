@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/purple-green.css';
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 html,
 body {
@@ -9,6 +9,14 @@ body {
     margin: 0px;
     font-family: 'Roboto', sans-serif;
 }
+
+.container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+}
 .nav-bar {
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 
     0px 6px 10px 0px rgba(0, 0, 0, 0.14), 
@@ -16,4 +24,30 @@ body {
 }
 .mat-toolbar.mat-blue {
     background-color: #3f51b5;
+    color: white;
+}
+
+.sidebar {
+    background-color: rgba(0,0,0,.03);
+    display: flex;
+    position: relative;
+    width: 20%;
+}
+.fav-locations {
+    width: 100%;
+    padding: 2em;
+    display: block;
+}
+
+.mat-expansion-panel {
+    background: #fff;
+    color: rgba(0,0,0,.87);
+}
+
+.mat-expansion-panel-header-title,
+.mat-list-base.mat-list-item {
+    color: rgba(0,0,0,.87);
+}
+.mat-expansion-indicator::after, .mat-expansion-panel-header-description {
+    color: rgba(0,0,0,.54);
 }
