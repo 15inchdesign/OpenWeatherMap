@@ -14,7 +14,7 @@ export class ForecastComponent implements OnInit {
 // Getting our current weather trough search by location
 loc$: Observable<string> ;
 loc: string;
-currentWeather: any = <any>{}; // Note: this param will be passed becuse it holds objects of our current location a.k.a shity
+//currentWeather: any = <any>{}; // Note: this param will be passed becuse it holds objects of our current location a.k.a shity
 forecast: any = <any>{}; // Note: this param will be passed becuse it search objects of our current location a.k.a shity
 msg: ''; // an empty string for error messagge
 
@@ -24,14 +24,14 @@ constructor(
   this.loc$ = store.pipe(select('loc'));
   this.loc$.subscribe(loc => {
     this.loc = loc;
-    this.searchWeather(loc);
+    this.searchForcast(loc);
   })
 }
 
 ngOnInit() {}
 
 
-searchWeather(loc: string) {
+/*searchWeather(loc: string) {
   this.msg = '';
   this.currentWeather = {};
   this.weatherService.getCurrentWeather(loc)
@@ -43,7 +43,7 @@ searchWeather(loc: string) {
      this.searchForcast(loc);
      
    })
-  }
+  }*/
 
   searchForcast(loc: string) {
     this.weatherService.getForecast(loc)
@@ -59,7 +59,7 @@ searchWeather(loc: string) {
   
   // Return objects 
   resultFound(){
-    return Object.keys(this.currentWeather).length > 0;
+    return Object.keys(this.forecast).length > 0;
   }
 }
 
