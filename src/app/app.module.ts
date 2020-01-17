@@ -1,13 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Material Modules
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatToolbarModule, 
          MatExpansionModule, 
          MatDividerModule, 
-         MatListModule } from '@angular/material';
+         MatListModule,
+         MatCardModule,
+         MatFormFieldModule,
+         MatInputModule } from '@angular/material';
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -21,27 +25,33 @@ import { AppComponent } from './app.component';
 import { WeatherService } from './services/weather.service';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { ForcastComponent } from './forcast/forcast.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { ForecastComponent } from './forecast/forecast.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     CurrentWeatherComponent,
-    ForcastComponent,
     TopBarComponent,
+    ForecastComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
      // Material modules
      MatToolbarModule,
      MatExpansionModule,
      MatListModule,
      MatDividerModule,
+     MatCardModule,
+     MatFormFieldModule,
+     MatInputModule,
     StoreModule.forRoot({ loc: locationReducer })
   
   ],

@@ -5,15 +5,15 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
           <!-- Favorite Locations -->
-        <mat-panel-title>
-          City
+        <mat-panel-title *ngIf="resultFound()">
+          City {{currentWeather.name}}
         </mat-panel-title>
       </mat-expansion-panel-header>
       <!-- Weather info -->
-      <mat-list>
-        <mat-list-item> Pepper </mat-list-item>
-        <mat-list-item> Salt </mat-list-item>
-        <mat-list-item> Paprika </mat-list-item>
+      <mat-list *ngIf="resultFound()">
+        <mat-list-item role="current-temp">{{currentWeather.weather?.main}}</mat-list-item>
+        <mat-list-item role="current-temp">{{currentWeather.weather?.description}}</mat-list-item>
+        <mat-list-item role="max-temp"> {{ currentWeather.main?.temp_min}}<sup>F</sup> / {{ currentWeather.main?.temp_max  }}<sup>F</sup> </mat-list-item>
        </mat-list>
       </mat-expansion-panel>
   </mat-accordion>

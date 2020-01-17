@@ -1,0 +1,11 @@
+<div class="search-field">
+   <mat-card>
+    <form (ngSubmit)='search(searchForm)' #searchForm='ngForm'>
+    <mat-form-field class="form-field">
+        <input matInput placeholder="Search for your city" [(ngModel)]='loc'  #lo='ngModel' name="lo" 
+        required type="text" autocomplete="off">
+       </mat-form-field>
+      </form>
+      <button mat-button type="submit">Search</button>
+   </mat-card>
+</div>

@@ -35,7 +35,7 @@ export class CurrentWeatherComponent implements OnInit {
     this.weatherService.getCurrentWeather(loc)
       .subscribe(res => {
         this.currentWeather = res;
-        console.log(res);
+        //console.log(res);
       }, err => {
         if (err.error && err.error.message) {
           alert(err.error.message);
