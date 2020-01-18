@@ -12,7 +12,8 @@ import { MatToolbarModule,
          MatCardModule,
          MatFormFieldModule,
          MatInputModule,
-         MatButtonModule } from '@angular/material';
+         MatButtonModule,
+         MatTabsModule } from '@angular/material';
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
@@ -54,6 +55,7 @@ import { SearchComponent } from './search/search.component';
      MatFormFieldModule,
      MatInputModule,
      MatButtonModule,
+     MatTabsModule,
     StoreModule.forRoot({ loc: locationReducer })
   
   ],

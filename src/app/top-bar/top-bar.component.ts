@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { SET_LOCATION } from '../location-store';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
-  constructor() { }
+  loc: string;
+
+  constructor(private store: Store<any>) { }
 
   ngOnInit() {
+  }
+
+search(searchForm: NgForm){
+    if(searchForm.invalid){
+    return;   
+    }
+
+    this.store.dispatch({ type: SET_LOCATION, payload: this.loc });
   }
 
 }

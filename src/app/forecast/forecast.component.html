@@ -1,6 +1,6 @@
 <p>forecast works!</p>
 <div *ngIf='resultFound()'>
-    <h1 class="center">Current weather forecast for {{forecast.name}}</h1>
+    <h1 class="center">Current weather forecast for {{currentWeather.name}}</h1>
     <mat-card *ngFor='let l of forecast.list' class="mat-elevation-z18">
       <mat-card-header>
         <mat-card-title>
