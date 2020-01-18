@@ -11,9 +11,9 @@
       </mat-expansion-panel-header>
    
       <mat-list *ngIf="resultFound()">
-        <mat-list-item role="">{{currentWeather.weather?.main}}</mat-list-item>
-        <mat-list-item role="">{{currentWeather.weather?.description}}</mat-list-item>
-      <mat-list-item role="">{{currentWeather.main?.temp}}F</mat-list-item>
+        <mat-list-item>{{currentWeather.weather?.main}}</mat-list-item>
+        <mat-list-item>{{currentWeather.weather?.description}}</mat-list-item>
+      <mat-list-item>{{currentWeather.main?.temp}}F</mat-list-item>
        </mat-list>
       </mat-expansion-panel>
   </mat-accordion>
