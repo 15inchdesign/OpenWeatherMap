@@ -27,6 +27,12 @@ body {
     color: white;
 }
 
+.portal-container {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+}
+
 .sidebar {
     background-color: rgba(0,0,0,.03);
     display: flex;
@@ -56,7 +62,7 @@ body {
     width: 50%;
     display: flex;
     justify-content: center;
-    align-self: center;
+    align-self: baseline;
 }
 
 .mat-card {

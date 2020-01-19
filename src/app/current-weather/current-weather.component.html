@@ -1,23 +1,132 @@
 <div class="fav-locations">
-<h4>Favorite locations</h4>
-<mat-divider></mat-divider>
-<mat-accordion>
+  <h4>Favorite locations</h4>
+  <mat-divider></mat-divider>
+
+  <mat-accordion>
+
     <mat-expansion-panel>
       <mat-expansion-panel-header>
-       
-        <mat-panel-title *ngIf="resultFound()">
-          City {{currentWeather.name}}
+        <mat-panel-title *ngIf='dubrovnik'>
+          {{dubrovnik.name}}
         </mat-panel-title>
       </mat-expansion-panel-header>
-   
-      <mat-list *ngIf="resultFound()">
-        <mat-list-item>{{currentWeather.weather?.main}}</mat-list-item>
-        <mat-list-item>{{currentWeather.weather?.description}}</mat-list-item>
-      <mat-list-item>{{currentWeather.main?.temp}}F</mat-list-item>
-       </mat-list>
-      </mat-expansion-panel>
+
+      <!--mat-list *ngIf='dubrovnik'>
+      <mat-list-item>{{dubrovnik.main?.temp}}</mat-list-item>         
+     </!--mat-list-->
+
+      <!--  Current weather  -->
+      <div *ngFor='let l of dubrovnik.weather' class="mat-elevation-z10">
+
+        <h2>{{dubrovnik.dt*1000 | date:'EEEE, d MMM, y, HH:mm:ss'}}</h2>
+
+
+        <table *ngIf='dubrovnik'>
+          <tbody>
+            <tr>
+              <td>{{dubrovnik.weather[0]?.icon}}</td>
+            </tr>
+            <tr>
+              <td>Temperature</td>
+              <td>{{dubrovnik.main?.temp | number: '1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Minimum Temperature</td>
+              <td>{{dubrovnik.main?.temp_min  | number:'1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Maximum Temperature</td>
+              <td>{{dubrovnik.main?.temp_max  | number:'1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Pressure</td>
+              <td>{{dubrovnik.main?.pressure | number:'1.0-0'}}mb</td>
+            </tr>
+            <tr>
+              <td>Humidity</td>
+              <td> {{dubrovnik.main?.humidity | number:'1.0-0'}}%</td>
+            </tr>
+            <tr>
+              <td>Weather</td>
+              <td>{{dubrovnik.weather[0]?.main}}</td>
+            </tr>
+            <tr>
+              <td>Wind Speed</td>
+              <td>{{dubrovnik.wind?.speed }}</td>
+            </tr>
+            <tr>
+              <td>Wind Direction</td>
+              <td>{{dubrovnik.wind?.deg }}<sup>o</sup></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
   </mat-accordion>
-<div *ngIf='!resultFound()'>
-  <h1 class="center">{{msg || 'Failed to get weather.'}}</h1>
+
+  <mat-divider></mat-divider>
+
+  <mat-accordion>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title *ngIf='dubrovnik'>
+          {{osijek.name}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <!--mat-list *ngIf='dubrovnik'>
+      <mat-list-item>{{dubrovnik.main?.temp}}</mat-list-item>         
+     </!--mat-list-->
+
+      <!--  Current weather  -->
+      <div *ngFor='let l of osijek.weather' class="mat-elevation-z10">
+
+        <h2>{{osijek.dt*1000 | date:'EEEE, d MMM, y, HH:mm:ss'}}</h2>
+
+
+        <table *ngIf='osijek'>
+          <tbody>
+            <tr>
+              <td>{{osijek.weather[0]?.icon}}</td>
+            </tr>
+            <tr>
+              <td>Temperature</td>
+              <td>{{osijek.main?.temp | number: '1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Minimum Temperature</td>
+              <td>{{osijek.main?.temp_min  | number:'1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Maximum Temperature</td>
+              <td>{{osijek.main?.temp_max  | number:'1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Pressure</td>
+              <td>{{osijek.main?.pressure | number:'1.0-0'}}mb</td>
+            </tr>
+            <tr>
+              <td>Humidity</td>
+              <td> {{osijek.main?.humidity | number:'1.0-0'}}%</td>
+            </tr>
+            <tr>
+              <td>Weather</td>
+              <td>{{osijek.weather[0]?.main}}</td>
+            </tr>
+            <tr>
+              <td>Wind Speed</td>
+              <td>{{osijek.wind?.speed }}</td>
+            </tr>
+            <tr>
+              <td>Wind Direction</td>
+              <td>{{osijek.wind?.deg }}<sup>o</sup></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
-</div>
+
+

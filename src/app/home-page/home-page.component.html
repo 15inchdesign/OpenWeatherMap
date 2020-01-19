@@ -1,23 +1,13 @@
+
 <app-top-bar class="nav-bar"></app-top-bar>
 <div class="container">
-   <div *ngIf='!loc' id='search'>
-      <h1>SEARCH THE WEATHER</h1>
-   </div>
-   <!--mat-tab-group *ngIf='loc'>
-      <mat-tab label="Favorite">
-   <app-current-weather class="sidebar"></app-current-weather>
-   </mat-tab>
-   <mat-tab label="Search forecast">
-   <app-search class="search-field"></app-search>
-   </mat-tab>
-   <mat-tab label="Result">
-   <app-forecast></app-forecast>
-   </mat-tab>
-   </mat-tab-group-->
-   <div *ngIf='loc' id='search'>
-   <app-current-weather class="sidebar"></app-current-weather>
-   <app-search class="search-field"></app-search>
-   <app-forecast></app-forecast>
-   </div>
+  <div *ngIf='!loc' id='search'>
+    <h1>SEARCH THE WEATHER</h1>
+  </div>
 
+  <div *ngIf='loc' id='search' class="portal-container">
+    <app-current-weather class="sidebar"></app-current-weather>
+    <app-search class="search-field"></app-search>
+    <app-forecast></app-forecast>
+  </div>
 </div>

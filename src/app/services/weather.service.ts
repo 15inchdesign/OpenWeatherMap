@@ -21,8 +21,24 @@ export class WeatherService {
 
  //Let's call current weather with GET method passing params
   getCurrentWeather(loc: string) {
-      return this.http.get(`${environment.apiUrl}/weather?q=${loc}&units=imperial&appid=${apiKey}`)
+      return this.http.get(`${environment.apiUrl}/weather?q=${loc}&appid=${apiKey}`)
    }
+
+getCurrentDubrovnik(loc: string) {
+    return this.http.get(`${environment.apiUrl}/weather?q=Dubrovnik&units=imperial&appid=${apiKey}`)
+ }
+
+ getCurrentZagreb(loc: string) {
+  return this.http.get(`${environment.apiUrl}/weather?q=Zagreb&units=imperial&appid=${apiKey}`)
+}
+
+getCurrentOsijek(loc: string) {
+  return this.http.get(`${environment.apiUrl}/weather?q=Osijek&units=imperial&appid=${apiKey}`)
+}
+
+getCurrentLasVegas(loc: string) {
+  return this.http.get(`${environment.apiUrl}/weather?q=Las Vegas&units=imperial&appid=${apiKey}`)
+}
 
   // Calling forecast and search by name of shity
   getForecast(loc: string) {
