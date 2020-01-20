@@ -1,5 +1,51 @@
 # WeatherApp
 
+
+## Prerequisite
+
+Install-fest:
+
+Install [NodeJs](https://nodejs.org/en/download/) or
+
+ `$ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -`
+ `sudo apt install nodejs`
+
+The nodejs package contains both the `node` and `npm` binaries.
+
+Verify that the Node.js and npm were successfully installed by printing their versions:
+`node --version`
+Output
+`v12.14.1`
+Output
+`npm --version`
+`6.13.6`
+
+Clone the repo or download it.
+
+Install 
+
+Angular CLI
+`npm install -g @angular/cli`
+
+Navigate to the downloaded folder and inside install node_modeule
+
+`npm install npm`
+
+Addon packages:
+
+Angular Material
+`npm install --save @angular/material @angular/cdk @angular/animations`
+
+We also need to install @ngrx/store by running:
+`npm install @ngrx/store --save`
+
+And of course:
+`npm i moment`
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
 
 ## Development server
