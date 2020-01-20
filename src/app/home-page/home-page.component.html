@@ -1,10 +1,10 @@
 
 <app-top-bar class="nav-bar"></app-top-bar>
 <div class="container">
-  <div *ngIf='!loc' id='search'>
-    <h1>SEARCH THE WEATHER</h1>
+  <div *ngIf='!loc' id='search' class="heading">
+    <h1>Well cum to protal!</h1>
+    <p style="margin: auto;">Put name of your vukojebina above and hit(PM, MBA) and ENTER (inside the potal) </p>
   </div>
-
   <div *ngIf='loc' id='search' class="portal-container">
     <app-current-weather class="sidebar"></app-current-weather>
     <app-search class="search-field"></app-search>

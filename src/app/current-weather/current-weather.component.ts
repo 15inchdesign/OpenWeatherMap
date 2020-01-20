@@ -14,6 +14,7 @@ export class CurrentWeatherComponent implements OnInit {
   loc$: Observable<string> ;
   loc: string;
   currentWeather: any = <any>{}; // Note: this param will be passed becuse it holds object of our current location
+  addFavorite: any = <any>{};
   // Predefined citys
   dubrovnik:  any =<any>{};
   zagreb: any = <any>{};
@@ -32,6 +33,7 @@ export class CurrentWeatherComponent implements OnInit {
       this.citysWeatherOsijek(loc);
       this.citysWeatherZagreb(loc);
       this.citysWeatherLasVegas(loc);
+
     })
   }
 
@@ -138,5 +140,9 @@ export class CurrentWeatherComponent implements OnInit {
     resultFound(){
       return Object.keys(this.currentWeather).length > 0;
     }
-  }
+    
+     // Add to favorite in session only
+   
+}
+  
 

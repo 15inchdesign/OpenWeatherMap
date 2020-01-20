@@ -3,7 +3,7 @@
 * reffer to file enviroments/enviroment.ts
 */ 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 // Loading our apiKey and apiUrl
 import { environment } from 'src/environments/environment';
@@ -16,12 +16,17 @@ const apiKey: string = environment.apiKey;
 })
 export class WeatherService {
 
-  constructor(private http: HttpClient ) { }  
+
+  constructor(private http: HttpClient ) { } 
+  
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
 
  //Let's call current weather with GET method passing params
   getCurrentWeather(loc: string) {
-      return this.http.get(`${environment.apiUrl}/weather?q=${loc}&appid=${apiKey}`)
+      return this.http.get(`${environment.apiUrl}/weather?q=${loc}&units=imperial&appid=${apiKey}&=hr`)
    }
 
 getCurrentDubrovnik(loc: string) {
@@ -42,7 +47,13 @@ getCurrentLasVegas(loc: string) {
 
   // Calling forecast and search by name of shity
   getForecast(loc: string) {
-    return this.http.get(`${environment.apiUrl}/forecast?q=${loc}&units=imperial&appid=${apiKey}`)
+    return this.http.get(`${environment.apiUrl}/forecast?q=${loc}&units=imperial&appid=${apiKey}&=hr`)
   }
+
+  // Save current location to sidebar
+  /*addLocation(loc: string){
+    return this.http.post(`${environment.apiUrl}/weather?q=${loc}&units=imperial&appid=${apiKey}&=hr`, loc, this.httpOptions)
+
+  }*/
 }
 

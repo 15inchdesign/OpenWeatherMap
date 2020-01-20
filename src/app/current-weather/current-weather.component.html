@@ -16,7 +16,7 @@
      </!--mat-list-->
 
       <!--  Current weather  -->
-      <div *ngFor='let l of dubrovnik.weather' class="mat-elevation-z10">
+      <div *ngFor='let l of dubrovnik.weather' class="mat-elevation-z10 inner">
 
         <h2>{{dubrovnik.dt*1000 | date:'EEEE, d MMM, y, HH:mm:ss'}}</h2>
 
@@ -70,17 +70,13 @@
 
     <mat-expansion-panel>
       <mat-expansion-panel-header>
-        <mat-panel-title *ngIf='dubrovnik'>
+        <mat-panel-title *ngIf='osijek'>
           {{osijek.name}}
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <!--mat-list *ngIf='dubrovnik'>
-      <mat-list-item>{{dubrovnik.main?.temp}}</mat-list-item>         
-     </!--mat-list-->
-
       <!--  Current weather  -->
-      <div *ngFor='let l of osijek.weather' class="mat-elevation-z10">
+      <div *ngFor='let l of osijek.weather' class="mat-elevation-z10 inner">
 
         <h2>{{osijek.dt*1000 | date:'EEEE, d MMM, y, HH:mm:ss'}}</h2>
 
@@ -127,6 +123,129 @@
       </div>
     </mat-expansion-panel>
   </mat-accordion>
-</div>
+
+  <mat-divider></mat-divider>
+
+  <mat-accordion>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title *ngIf='zagreb'>
+          {{zagreb.name}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+
+      <!--  Current weather  -->
+      <div *ngFor='let l of zagreb.weather' class="mat-elevation-z10 inner">
+
+        <h2>{{osijek.dt*1000 | date:'EEEE, d MMM, y, HH:mm:ss'}}</h2>
+
+
+        <table *ngIf='zagreb'>
+          <tbody>
+            <tr>
+              <td>{{zagreb.weather[0]?.icon}}</td>
+            </tr>
+            <tr>
+              <td>Temperature</td>
+              <td>{{zagreb.main?.temp | number: '1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Minimum Temperature</td>
+              <td>{{zagreb.main?.temp_min  | number:'1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Maximum Temperature</td>
+              <td>{{zagreb.main?.temp_max  | number:'1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Pressure</td>
+              <td>{{zagreb.main?.pressure | number:'1.0-0'}}mb</td>
+            </tr>
+            <tr>
+              <td>Humidity</td>
+              <td> {{zagreb.main?.humidity | number:'1.0-0'}}%</td>
+            </tr>
+            <tr>
+              <td>Weather</td>
+              <td>{{zagreb.weather[0]?.main}}</td>
+            </tr>
+            <tr>
+              <td>Wind Speed</td>
+              <td>{{zagreb.wind?.speed }}</td>
+            </tr>
+            <tr>
+              <td>Wind Direction</td>
+              <td>{{zagreb.wind?.deg }}<sup>o</sup></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion>
+
+    <mat-divider></mat-divider>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title *ngIf='lasvegas'>
+          {{lasvegas.name}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <!--  Current weather  -->
+      <div *ngFor='let l of lasvegas.weather' class="mat-elevation-z10 inner">
+
+        <h2>{{osijek.dt*1000 | date:'EEEE, d MMM, y, HH:mm:ss'}}</h2>
+
+
+        <table *ngIf='lasvegas'>
+          <tbody>
+            <tr>
+              <td>{{lasvegas.weather[0]?.icon}}</td>
+            </tr>
+            <tr>
+              <td>Temperature</td>
+              <td>{{lasvegas.main?.temp | number: '1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Minimum Temperature</td>
+              <td>{{lasvegas.main?.temp_min  | number:'1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Maximum Temperature</td>
+              <td>{{lasvegas.main?.temp_max  | number:'1.0-0'}}<sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Pressure</td>
+              <td>{{lasvegas.main?.pressure | number:'1.0-0'}}mb</td>
+            </tr>
+            <tr>
+              <td>Humidity</td>
+              <td> {{lasvegas.main?.humidity | number:'1.0-0'}}%</td>
+            </tr>
+            <tr>
+              <td>Weather</td>
+              <td>{{lasvegas.weather[0]?.main}}</td>
+            </tr>
+            <tr>
+              <td>Wind Speed</td>
+              <td>{{lasvegas.wind?.speed }}</td>
+            </tr>
+            <tr>
+              <td>Wind Direction</td>
+              <td>{{lasvegas.wind?.deg }}<sup>o</sup></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-divider></mat-divider>
+
 
 
