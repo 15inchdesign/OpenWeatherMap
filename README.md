@@ -27,7 +27,7 @@ Install
 Angular CLI
 `npm install -g @angular/cli`
 
-Navigate to the downloaded folder and inside install node_modeule
+Navigate to the downloaded folder and inside install node_module
 
 `npm install npm`
 
