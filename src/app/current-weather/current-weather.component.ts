@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { WeatherService } from '../services/weather.service';
-import { ADD_LOCATION } from '../location-store';
 
 @Component({
   selector: 'app-current-weather',
@@ -15,18 +14,16 @@ export class CurrentWeatherComponent implements OnInit {
   loc$: Observable<string> ;
   loc: string;
   currentWeather: any = <any>{}; // Note: this param will be passed becuse it holds object of our current location
-  //addFavorite: any = <any>{};
+  addFavorite: any = <any>{};
   // Predefined citys
   dubrovnik:  any =<any>{};
   zagreb: any = <any>{};
   osijek: any = <any>{};
   lasvegas: any = <any>{};
-  forecast: any = <any>{};
-  fav: any[] = [];
-  msg: ''; // an empty string for error mesagge
+  msg: ''; // an empty string for error messagge
 
   constructor(
-    private store: Store<any>,
+    private store: Store <any>,
     private weatherService: WeatherService) {
     this.loc$ = store.pipe(select('loc'));
     this.loc$.subscribe(loc => {
@@ -140,26 +137,12 @@ export class CurrentWeatherComponent implements OnInit {
               })
             }
 
-         /*   searchForecast(loc: string) {
-              this.weatherService.getForecast(loc)
-                .subscribe(res => {
-                  this.forecast = res;
-                }, err => {
-          
-                })
-            }*/
-
     resultFound(){
       return Object.keys(this.currentWeather).length > 0;
     }
     
-    AddLocation(loc: string) {
-      this.fav.push(loc);
-      //this.store.dispatch({ type: ADD_LOCATION, payload: this.fav });
-       console.log(this.fav);
-       
-     }
-    
+     // Add to favorite in session only
+   
 }
   
 

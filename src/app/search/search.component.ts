@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
-import { AddLocation } from  '../favorite-location/add-location';
-
-// List of locations
-import { SET_LOCATION, ADD_LOCATION } from '../location-store';
-
-// Call to OpenWatherMap @service
+import { SET_LOCATION } from '../location-store';
+import { NgForm } from '@angular/forms';
 import { WeatherService } from '../services/weather.service';
 
 @Component({
@@ -20,8 +15,6 @@ export class SearchComponent implements OnInit {
   loc$: Observable<string>;
   loc: string;
   currentWeather: any = <any>{};
-  // make empty array then send him to addLocation @param newLoc
-  fav: any[] = [];
   msg: string;
 
   constructor(
@@ -32,7 +25,6 @@ export class SearchComponent implements OnInit {
     this.loc$.subscribe(loc => {
       this.loc = loc;
       this.searchWeather(loc);
-     // this.AddLocation(loc);
     })
   }
 
@@ -46,7 +38,6 @@ search(searchForm: NgForm){
 
     this.store.dispatch({ type: SET_LOCATION, payload: this.loc });
   }
-
    searchWeather(loc: string) {
     this.msg = '';
     this.currentWeather = {};
@@ -68,12 +59,4 @@ search(searchForm: NgForm){
   resultFound() {
     return Object.keys(this.currentWeather).length > 0;
   }
-    
-  AddLocation(loc: string) {
-    this.fav.push(loc);
-      
-     console.log(this.fav);
-     return Object.keys(this.fav).length > 0;
-   }
 }
-

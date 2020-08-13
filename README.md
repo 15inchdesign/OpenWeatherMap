@@ -27,7 +27,7 @@ Install
 Angular CLI
 `npm install -g @angular/cli`
 
-Navigate to the downloaded folder and inside install node_modeule
+Navigate to the downloaded folder and inside install node_module
 
 `npm install npm`
 
@@ -42,7 +42,8 @@ We also need to install @ngrx/store by running:
 And of course:
 `npm i moment`
 
-And then.....
+
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.

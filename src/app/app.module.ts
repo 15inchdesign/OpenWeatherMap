@@ -18,10 +18,9 @@ import { MatToolbarModule,
 // Modules
 import { AppRoutingModule } from './app-routing.module';
 
-// Weather store @ngrx
+// Weather store
 import { locationReducer } from './location-store';
 import { StoreModule } from '@ngrx/store';
-
 
 // Components
 import { AppComponent } from './app.component';
