@@ -42,8 +42,7 @@ We also need to install @ngrx/store by running:
 And of course:
 `npm i moment`
 
-
-
+And then.....
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.

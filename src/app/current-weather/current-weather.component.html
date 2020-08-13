@@ -246,5 +246,67 @@
 
   <mat-divider></mat-divider>
 
+  <mat-accordion>
+
+    <mat-divider></mat-divider>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title *ngIf='fav'>
+          {{fav | json}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <!--  Current weather  -->
+      <div *ngFor='let f of fav' class="mat-elevation-z10 inner">
+
+        <h2>{{f | json}}</h2>
+
+
+        <table *ngIf='fav'>
+          <tbody>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Temperature</td>
+              <td><sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Minimum Temperature</td>
+              <td><sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Maximum Temperature</td>
+              <td><sup>o</sup>F</td>
+            </tr>
+            <tr>
+              <td>Pressure</td>
+              <td>mb</td>
+            </tr>
+            <tr>
+              <td>Humidity</td>
+              <td> %</td>
+            </tr>
+            <tr>
+              <td>Weather</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><sup>o</sup></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  
+
 
 
